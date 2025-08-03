@@ -216,7 +216,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Page setup
-st.set_page_config(layout="wide", page_title="MVS Tool", page_icon="⚙️")
+st.set_page_config(layout="wide", page_title="Data Tool", page_icon="⚙️")
 
 # Session state
 if "selected" not in st.session_state:
@@ -239,16 +239,16 @@ with st.sidebar:
     st.markdown("""
         <div style='text-align: center; padding: 1rem; margin-bottom: 1rem; 
                     background: rgba(255,255,255,0.1); border-radius: 8px;'>
-            <h3 style='color: #3b82f6; margin: 0;'>MVS Tool</h3>
+            <h3 style='color: #3b82f6; margin: 0;'>Data Tool</h3>
             <p style='color: rgba(255,255,255,0.7); font-size: 0.8rem; margin: 0;'>
-                Migration & Validation Suite
+                SAP HR Data Processing
             </p>
         </div>
     """, unsafe_allow_html=True)
     
     selected = option_menu(
         menu_title=None,
-        options=["Dashboard", "Migration Tools", "Analytics", "System Config"],
+        options=["Dashboard", "Data Tools", "Analytics", "System Config"],
         icons=["speedometer2", "arrow-repeat", "graph-up", "gear"],
         default_index=0,
         styles={
@@ -295,7 +295,7 @@ if selected == "Dashboard":
     # Header
     st.markdown("""
         <div class='tool-header'>
-            <h1 class='tool-title'>Migration & Validation Suite</h1>
+            <h1 class='tool-title'>Data Processing Dashboard</h1>
             <p class='tool-subtitle'>SAP HR Data Migration Dashboard</p>
         </div>
     """, unsafe_allow_html=True)
@@ -354,7 +354,7 @@ if selected == "Dashboard":
     
     with col1:
         if st.button("Foundation Data", key="dash_foundation", use_container_width=True):
-            st.session_state.selected = "Migration Tools"
+            st.session_state.selected = "Data Tools"
             st.session_state.demo_page = "foundation_data_view"
             st.rerun()
         
@@ -366,7 +366,7 @@ if selected == "Dashboard":
         """, unsafe_allow_html=True)
         
         if st.button("Employee Data", key="dash_employee", use_container_width=True):
-            st.session_state.selected = "Migration Tools"
+            st.session_state.selected = "Data Tools"
             st.session_state.demo_page = "employee_data_management"
             st.rerun()
             
@@ -379,7 +379,7 @@ if selected == "Dashboard":
     
     with col2:
         if st.button("Payroll Data", key="dash_payroll", use_container_width=True):
-            st.session_state.selected = "Migration Tools"
+            st.session_state.selected = "Data Tools"
             st.session_state.demo_page = "payroll_data_tool"
             st.rerun()
             
@@ -409,13 +409,13 @@ if selected == "Dashboard":
     
     st.dataframe(recent_data, use_container_width=True, hide_index=True)
 
-# -------------------- MIGRATION TOOLS --------------------
-elif selected == "Migration Tools":
+# -------------------- DATA TOOLS --------------------
+elif selected == "Data Tools":
     if st.session_state.demo_page == "main":
         st.markdown("""
             <div class='tool-header'>
-                <h1 class='tool-title'>Migration Tools</h1>
-                <p class='tool-subtitle'>Select a migration module to begin processing</p>
+                <h1 class='tool-title'>Data Processing Tools</h1>
+                <p class='tool-subtitle'>Select a data module to begin processing</p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -424,12 +424,8 @@ elif selected == "Migration Tools":
         
         with col1:
             # Foundation Data Card
-            if st.button("", key="found_invisible", help="Foundation Data"):
-                st.session_state.demo_page = "foundation_data_view"
-                st.rerun()
-            
             st.markdown(f"""
-                <div class='module-card' onclick="document.querySelector('[key=found_invisible]').click()">
+                <div class='module-card'>
                     <div class='module-title'>Foundation Data</div>
                     <div class='module-description'>
                         {"Enhanced organizational hierarchy processing with HRP1000/HRP1001 support" if FOUNDATION_WRAPPER_AVAILABLE else "Organizational structure and hierarchy management"}
@@ -441,13 +437,13 @@ elif selected == "Migration Tools":
                 </div>
             """, unsafe_allow_html=True)
             
-            # Employee Data Card
-            if st.button("", key="emp_invisible", help="Employee Data"):
-                st.session_state.demo_page = "employee_data_management"
+            if st.button("Open Foundation Data", key="found_btn", use_container_width=True):
+                st.session_state.demo_page = "foundation_data_view"
                 st.rerun()
-                
+            
+            # Employee Data Card
             st.markdown(f"""
-                <div class='module-card' onclick="document.querySelector('[key=emp_invisible]').click()">
+                <div class='module-card'>
                     <div class='module-title'>Employee Data</div>
                     <div class='module-description'>
                         {"Complete employee information processing with PA0001/PA0002/PA0006/PA0105 files" if EMPLOYEE_WRAPPER_AVAILABLE else "Employee personal and job information management"}
@@ -458,15 +454,15 @@ elif selected == "Migration Tools":
                     </div>
                 </div>
             """, unsafe_allow_html=True)
+            
+            if st.button("Open Employee Data", key="emp_btn", use_container_width=True):
+                st.session_state.demo_page = "employee_data_management"
+                st.rerun()
         
         with col2:
             # Payroll Data Card
-            if st.button("", key="pay_invisible", help="Payroll Data"):
-                st.session_state.demo_page = "payroll_data_tool"
-                st.rerun()
-                
             st.markdown(f"""
-                <div class='module-card' onclick="document.querySelector('[key=pay_invisible]').click()">
+                <div class='module-card'>
                     <div class='module-title'>Payroll Data</div>
                     <div class='module-description'>
                         {"Advanced payroll processing with PA0008/PA0014 wage type validation" if PAYROLL_WRAPPER_AVAILABLE else "Payroll and compensation data management"}
@@ -477,6 +473,10 @@ elif selected == "Migration Tools":
                     </div>
                 </div>
             """, unsafe_allow_html=True)
+            
+            if st.button("Open Payroll Data", key="pay_btn", use_container_width=True):
+                st.session_state.demo_page = "payroll_data_tool"
+                st.rerun()
             
             # Time Data Card (disabled)
             st.markdown("""
@@ -546,7 +546,7 @@ elif selected == "Migration Tools":
 elif selected == "Analytics":
     st.markdown("""
         <div class='tool-header'>
-            <h1 class='tool-title'>Migration Analytics</h1>
+            <h1 class='tool-title'>Data Analytics</h1>
             <p class='tool-subtitle'>Data validation and quality reporting</p>
         </div>
     """, unsafe_allow_html=True)
