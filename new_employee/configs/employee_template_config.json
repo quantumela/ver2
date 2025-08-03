@@ -1,0 +1,197 @@
+[
+  {
+    "target_column": "STATUS",
+    "display_name": "Employee Status",
+    "description": "Active/Inactive status"
+  },
+  {
+    "target_column": "USERID",
+    "display_name": "User ID",
+    "description": "Unique user identifier"
+  },
+  {
+    "target_column": "USERNAME",
+    "display_name": "Username",
+    "description": "Username for system access"
+  },
+  {
+    "target_column": "FIRSTNAME",
+    "display_name": "First Name",
+    "description": "Employee first name"
+  },
+  {
+    "target_column": "NICKNAME",
+    "display_name": "Nickname",
+    "description": "Preferred nickname"
+  },
+  {
+    "target_column": "MI",
+    "display_name": "Middle Initial",
+    "description": "Middle initial"
+  },
+  {
+    "target_column": "LASTNAME",
+    "display_name": "Last Name",
+    "description": "Employee last name"
+  },
+  {
+    "target_column": "SUFFIX",
+    "display_name": "Suffix",
+    "description": "Name suffix (Jr., Sr., etc.)"
+  },
+  {
+    "target_column": "TITLE",
+    "display_name": "Job Title",
+    "description": "Employee job title"
+  },
+  {
+    "target_column": "GENDER",
+    "display_name": "Gender",
+    "description": "Employee gender"
+  },
+  {
+    "target_column": "EMAIL",
+    "display_name": "Email Address",
+    "description": "Primary email address"
+  },
+  {
+    "target_column": "MANAGER",
+    "display_name": "Manager",
+    "description": "Manager/supervisor"
+  },
+  {
+    "target_column": "HR",
+    "display_name": "HR Representative",
+    "description": "HR contact"
+  },
+  {
+    "target_column": "DEPARTMENT",
+    "display_name": "Department",
+    "description": "Department/division"
+  },
+  {
+    "target_column": "JOBCODE",
+    "display_name": "Job Code",
+    "description": "Job classification code"
+  },
+  {
+    "target_column": "DIVISION",
+    "display_name": "Division",
+    "description": "Business division"
+  },
+  {
+    "target_column": "LOCATION",
+    "display_name": "Location",
+    "description": "Work location"
+  },
+  {
+    "target_column": "TIMEZONE",
+    "display_name": "Timezone",
+    "description": "Employee timezone"
+  },
+  {
+    "target_column": "HIREDATE",
+    "display_name": "Hire Date",
+    "description": "Date of hire"
+  },
+  {
+    "target_column": "EMPID",
+    "display_name": "Employee ID",
+    "description": "Employee identifier"
+  },
+  {
+    "target_column": "BIZ_PHONE",
+    "display_name": "Business Phone",
+    "description": "Work phone number"
+  },
+  {
+    "target_column": "FAX",
+    "display_name": "Fax",
+    "description": "Fax number"
+  },
+  {
+    "target_column": "ADDR1",
+    "display_name": "Address Line 1",
+    "description": "Primary address"
+  },
+  {
+    "target_column": "ADDR2",
+    "display_name": "Address Line 2",
+    "description": "Secondary address"
+  },
+  {
+    "target_column": "CITY",
+    "display_name": "City",
+    "description": "City"
+  },
+  {
+    "target_column": "STATE",
+    "display_name": "State",
+    "description": "State/province"
+  },
+  {
+    "target_column": "ZIP",
+    "display_name": "ZIP Code",
+    "description": "Postal code"
+  },
+  {
+    "target_column": "COUNTRY",
+    "display_name": "Country",
+    "description": "Country"
+  },
+  {
+    "target_column": "REVIEW_FREQ",
+    "display_name": "Review Frequency",
+    "description": "Performance review frequency"
+  },
+  {
+    "target_column": "LAST_REVIEW_DATE",
+    "display_name": "Last Review Date",
+    "description": "Date of last review"
+  },
+  {
+    "target_column": "MATRIX_MANAGER",
+    "display_name": "Matrix Manager",
+    "description": "Matrix manager"
+  },
+  {
+    "target_column": "DEFAULT_LOCALE",
+    "display_name": "Default Locale",
+    "description": "Locale setting"
+  },
+  {
+    "target_column": "PROXY",
+    "display_name": "Proxy",
+    "description": "Proxy user"
+  },
+  {
+    "target_column": "seatingChart",
+    "display_name": "Seating Chart",
+    "description": "Seating chart reference"
+  },
+  {
+    "target_column": "ASSIGNMENTUUID",
+    "display_name": "Assignment UUID",
+    "description": "Assignment identifier"
+  },
+  {
+    "target_column": "DISPLAYNAME",
+    "display_name": "Display Name",
+    "description": "Display name"
+  },
+  {
+    "target_column": "PERSON_ID_EXTERNAL",
+    "display_name": "Person ID External",
+    "description": "External person ID"
+  },
+  {
+    "target_column": "ASSIGNMENT_ID_EXTERNAL",
+    "display_name": "Assignment ID External",
+    "description": "External assignment ID"
+  },
+  {
+    "target_column": "test",
+    "display_name": "test",
+    "description": "test"
+  }
+]
