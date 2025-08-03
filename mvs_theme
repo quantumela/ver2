@@ -1,0 +1,592 @@
+import streamlit as st
+
+def apply_professional_theme():
+    """Apply professional enterprise tool styling to MVS system"""
+    st.markdown("""
+    <style>
+        /* ================================
+           GLOBAL THEME - Enterprise Tool
+           ================================ */
+        
+        /* Hide Streamlit branding and menu */
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        
+        /* Remove default Streamlit padding */
+        .block-container {
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 100%;
+        }
+        
+        /* Main app background - professional dark theme */
+        .stApp {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        
+        /* Content area - clean white workspace */
+        .main .block-container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+        }
+        
+        /* ================================
+           HEADER STYLING - Tool-like
+           ================================ */
+        
+        /* Main title styling */
+        h1 {
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 5px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #374151;
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h3 {
+            color: #4b5563;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        /* ================================
+           SIDEBAR - Professional Navigation
+           ================================ */
+        
+        /* Sidebar styling */
+        .css-1d391kg {
+            background: #1f2937;
+            padding-top: 0;
+        }
+        
+        /* Sidebar content */
+        .css-1d391kg .css-1v0mbdj {
+            background: #1f2937;
+            color: #f9fafb;
+        }
+        
+        /* Sidebar title */
+        .css-1d391kg h1 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #4b5563;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Sidebar text */
+        .css-1d391kg .css-1v0mbdj p {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+        
+        /* Radio buttons in sidebar */
+        .css-1d391kg .stRadio > div {
+            background: transparent;
+        }
+        
+        .css-1d391kg .stRadio label {
+            color: #e5e7eb !important;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 2px 0;
+            transition: all 0.2s ease;
+        }
+        
+        .css-1d391kg .stRadio label:hover {
+            background: #374151;
+            color: #ffffff !important;
+        }
+        
+        /* Selected radio button */
+        .css-1d391kg .stRadio input:checked + label {
+            background: #3b82f6 !important;
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+        
+        /* ================================
+           BUTTONS - Professional Styling
+           ================================ */
+        
+        /* Primary buttons */
+        .stButton > button {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+        }
+        
+        .stButton > button:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        /* Download buttons */
+        .stDownloadButton > button {
+            background: linear-gradient(135deg, #059669, #047857);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        /* File uploader */
+        .stFileUploader > div {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 20px;
+            background: #f9fafb;
+        }
+        
+        .stFileUploader > div:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        
+        /* ================================
+           DATA TABLES - Enterprise Style
+           ================================ */
+        
+        /* DataFrames */
+        .stDataFrame {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .stDataFrame table {
+            font-size: 13px;
+            font-family: 'Segoe UI', monospace;
+        }
+        
+        .stDataFrame th {
+            background: #f3f4f6 !important;
+            color: #374151 !important;
+            font-weight: 600 !important;
+            padding: 10px 8px !important;
+            text-align: left !important;
+            border-bottom: 2px solid #d1d5db !important;
+        }
+        
+        .stDataFrame td {
+            padding: 8px !important;
+            border-bottom: 1px solid #f3f4f6 !important;
+            color: #4b5563;
+        }
+        
+        .stDataFrame tr:hover {
+            background: #f8fafc !important;
+        }
+        
+        /* ================================
+           STATUS INDICATORS - Professional
+           ================================ */
+        
+        /* Success indicators */
+        .stSuccess {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #065f46;
+            font-weight: 500;
+        }
+        
+        /* Error indicators */
+        .stError {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #991b1b;
+            font-weight: 500;
+        }
+        
+        /* Warning indicators */
+        .stWarning {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #92400e;
+            font-weight: 500;
+        }
+        
+        /* Info indicators */
+        .stInfo {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        
+        /* ================================
+           METRICS - Dashboard Style
+           ================================ */
+        
+        /* Metric containers */
+        .metric-container {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        /* Metric values */
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: #6b7280;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ================================
+           PROGRESS BARS - Tool Style
+           ================================ */
+        
+        .progress-container {
+            background: #f3f4f6;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-success {
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+        
+        .progress-warning {
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+        }
+        
+        .progress-error {
+            background: linear-gradient(90deg, #ef4444, #dc2626);
+        }
+        
+        /* ================================
+           FORM CONTROLS - Professional
+           ================================ */
+        
+        /* Input fields */
+        .stTextInput > div > div > input {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #374151;
+            transition: border-color 0.2s ease;
+        }
+        
+        .stTextInput > div > div > input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Select boxes */
+        .stSelectbox > div > div {
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+        }
+        
+        /* Checkboxes */
+        .stCheckbox > label {
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        /* ================================
+           ADMIN SECTIONS - Secured Look
+           ================================ */
+        
+        .admin-section {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border: 1px solid #fca5a5;
+            border-left: 4px solid #ef4444;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        
+        .admin-section h2 {
+            color: #991b1b;
+            margin-top: 0;
+        }
+        
+        /* ================================
+           TABS - Professional Style
+           ================================ */
+        
+        .stTabs > div > div > div {
+            background: #f9fafb;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .stTabs > div > div > div > button {
+            background: transparent;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            padding: 10px 16px;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        
+        .stTabs > div > div > div > button[aria-selected="true"] {
+            background: #ffffff;
+            color: #1f2937;
+            border-bottom: 2px solid #3b82f6;
+        }
+        
+        /* ================================
+           EXPANDERS - Clean Accordion
+           ================================ */
+        
+        .streamlit-expanderHeader {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .streamlit-expanderContent {
+            border: 1px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            padding: 16px;
+            background: #ffffff;
+        }
+        
+        /* ================================
+           CUSTOM STATUS BADGES
+           ================================ */
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .status-warning {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #f59e0b;
+        }
+        
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        
+        .status-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #3b82f6;
+        }
+        
+        /* ================================
+           LOADING STATES
+           ================================ */
+        
+        .stSpinner > div {
+            border-color: #3b82f6 !important;
+        }
+        
+        /* ================================
+           RESPONSIVE DESIGN
+           ================================ */
+        
+        @media (max-width: 768px) {
+            .block-container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .stDataFrame table {
+                font-size: 12px;
+            }
+        }
+        
+    </style>
+    """, unsafe_allow_html=True)
+
+def create_professional_header(title, subtitle=None):
+    """Create a professional tool-style header"""
+    st.markdown(f"""
+    <div style="
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+    ">
+        <h1 style="margin: 0; color: white; border: none; font-size: 24px; font-weight: 600;">
+            {title}
+        </h1>
+        {f'<p style="margin: 5px 0 0 0; color: #e0e7ff; font-size: 14px;">{subtitle}</p>' if subtitle else ''}
+    </div>
+    """, unsafe_allow_html=True)
+
+def create_status_card(title, value, status="info", description=None):
+    """Create professional status cards"""
+    status_colors = {
+        "success": {"bg": "#d1fae5", "border": "#10b981", "text": "#065f46"},
+        "warning": {"bg": "#fef3c7", "border": "#f59e0b", "text": "#92400e"},
+        "error": {"bg": "#fee2e2", "border": "#ef4444", "text": "#991b1b"},
+        "info": {"bg": "#dbeafe", "border": "#3b82f6", "text": "#1e40af"}
+    }
+    
+    colors = status_colors.get(status, status_colors["info"])
+    
+    st.markdown(f"""
+    <div style="
+        background: {colors['bg']};
+        border: 1px solid {colors['border']};
+        border-radius: 8px;
+        padding: 16px;
+        margin: 8px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    ">
+        <div style="
+            font-size: 24px;
+            font-weight: 700;
+            color: {colors['text']};
+            margin-bottom: 4px;
+        ">{value}</div>
+        <div style="
+            font-size: 12px;
+            color: {colors['text']};
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        ">{title}</div>
+        {f'<div style="font-size: 14px; color: {colors["text"]}; opacity: 0.8;">{description}</div>' if description else ''}
+    </div>
+    """, unsafe_allow_html=True)
+
+def create_progress_bar(label, current, total, status="info"):
+    """Create professional progress bars"""
+    percentage = (current / total * 100) if total > 0 else 0
+    
+    status_colors = {
+        "success": "#10b981",
+        "warning": "#f59e0b", 
+        "error": "#ef4444",
+        "info": "#3b82f6"
+    }
+    
+    color = status_colors.get(status, status_colors["info"])
+    
+    st.markdown(f"""
+    <div style="margin: 12px 0;">
+        <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        ">
+            <span style="font-weight: 500; color: #374151;">{label}</span>
+            <span style="font-size: 12px; color: #6b7280;">{current}/{total} ({percentage:.1f}%)</span>
+        </div>
+        <div style="
+            background: #f3f4f6;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        ">
+            <div style="
+                background: {color};
+                height: 100%;
+                width: {percentage}%;
+                border-radius: 10px;
+                transition: width 0.3s ease;
+            "></div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+def create_data_table_header(title, record_count=None):
+    """Create professional table headers"""
+    st.markdown(f"""
+    <div style="
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-bottom: none;
+        padding: 12px 16px;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    ">
+        <h3 style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 600;">
+            {title}
+        </h3>
+        {f'<span style="color: #718096; font-size: 14px;">{record_count:,} records</span>' if record_count else ''}
+    </div>
+    """, unsafe_allow_html=True)
