@@ -1,0 +1,67 @@
+[
+  {
+    "target_column": "EMPLOYEE_ID",
+    "display_name": "Employee ID",
+    "description": "Unique identifier for each employee"
+  },
+  {
+    "target_column": "WAGE_TYPE",
+    "display_name": "Wage Type",
+    "description": "Type of payment (salary, bonus, overtime)"
+  },
+  {
+    "target_column": "AMOUNT",
+    "display_name": "Amount",
+    "description": "Payment amount"
+  },
+  {
+    "target_column": "CURRENCY",
+    "display_name": "Currency",
+    "description": "Currency code (USD, EUR, etc.)"
+  },
+  {
+    "target_column": "PAY_PERIOD",
+    "display_name": "Pay Period",
+    "description": "Period this payment covers"
+  },
+  {
+    "target_column": "PAYMENT_DATE",
+    "display_name": "Payment Date",
+    "description": "When the payment was made"
+  },
+  {
+    "target_column": "RECURRING_AMOUNT",
+    "display_name": "Recurring Amount",
+    "description": "Regular recurring payments/deductions"
+  },
+  {
+    "target_column": "DEDUCTION_TYPE",
+    "display_name": "Deduction Type",
+    "description": "Type of deduction (tax, insurance, etc.)"
+  },
+  {
+    "target_column": "STATUS",
+    "display_name": "Status",
+    "description": "Payment status (processed, pending, etc.)"
+  },
+  {
+    "target_column": "COST_CENTER",
+    "display_name": "Cost Center",
+    "description": "Accounting cost center"
+  },
+  {
+    "target_column": "GROSS_AMOUNT",
+    "display_name": "Gross Amount",
+    "description": "Amount before deductions"
+  },
+  {
+    "target_column": "NET_AMOUNT",
+    "display_name": "Net Amount",
+    "description": "Amount after deductions"
+  },
+  {
+    "target_column": "TAX_CODE",
+    "display_name": "Tax Code",
+    "description": "Tax classification code"
+  }
+]
