@@ -1,0 +1,52 @@
+[
+  {
+    "target_column1": "externalCode",
+    "target_column2": "External Code",
+    "description": "Unique identifier for the organizational unit"
+  },
+  {
+    "target_column1": "name.en_US",
+    "target_column2": "Name (English US)",
+    "description": "Name in US English"
+  },
+  {
+    "target_column1": "name.defaultValue",
+    "target_column2": "Name (Default)",
+    "description": "Default name value"
+  },
+  {
+    "target_column1": "effectiveStartDate",
+    "target_column2": "Start Date",
+    "description": "Effective start date"
+  },
+  {
+    "target_column1": "effectiveEndDate",
+    "target_column2": "End Date",
+    "description": "Effective end date"
+  },
+  {
+    "target_column1": "effectiveStatus",
+    "target_column2": "Status",
+    "description": "Current status (Active/Inactive)"
+  },
+  {
+    "target_column1": "test",
+    "target_column2": "test",
+    "description": "test"
+  },
+  {
+    "target_column1": "Object abbr.",
+    "target_column2": "Object Abbreviation",
+    "description": "Object abbreviation"
+  },
+  {
+    "target_column1": "Operator",
+    "target_column2": "Operator",
+    "description": "Operator information"
+  },
+  {
+    "target_column1": "test1",
+    "target_column2": "test1",
+    "description": ""
+  }
+]

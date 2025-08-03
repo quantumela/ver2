@@ -1,0 +1,32 @@
+[
+  {
+    "target_column1": "externalCode",
+    "target_column2": "External Code",
+    "description": "Unique identifier for the association"
+  },
+  {
+    "target_column1": "effectiveStartDate",
+    "target_column2": "Start Date",
+    "description": "Effective start date"
+  },
+  {
+    "target_column1": "effectiveEndDate",
+    "target_column2": "End Date",
+    "description": "Effective end date"
+  },
+  {
+    "target_column1": "cust_toLegalEntity.externalCode",
+    "target_column2": "Parent Entity Code",
+    "description": "Parent reference"
+  },
+  {
+    "target_column1": "relationshipType",
+    "target_column2": "Relationship Type",
+    "description": "Type of relationship"
+  },
+  {
+    "target_column1": "effectiveStatus",
+    "target_column2": "Status",
+    "description": "Current status"
+  }
+]
